@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <import type="com.example.databindingexample.R" />
+        <import type="android.view.View" />
+<variable name="visibility" type="com.example.databindingexample.view_visibility.VisibilityModel"/>
+ <variable name="bindingAdapter" type="com.example.databindingexample.view_visibility.MyBindingAdapter"/>
+    </data>
+
+<LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context=".view_visibility.VisibilityActivity">
+
+    <TextView
+            android:text="TextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:background="@{visibility.visibilityFlag? R.color.colorAccent :0}"
+            android:visibility="@{visibility.visibilityFlag? View.VISIBLE :View.INVISIBLE}"
+            android:id="@+id/textView2"/>
+    <Button
+            android:text="@{visibility.visibilityFlag? `Invisible` :`visibile`}"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="12dp"
+            android:onClick="@{()->visibility.updateVisibility()}"
+            android:id="@+id/button"/>
+    <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/textView_val"
+            app:value="@{visibility.value}"
+            />
+
+    <ImageView android:layout_width="200dp"
+               android:layout_height="200dp"
+               android:layout_gravity="center_horizontal"
+               android:id="@+id/imageView"
+               setResource="@{visibility.url}"/>
+</LinearLayout>
+</layout>

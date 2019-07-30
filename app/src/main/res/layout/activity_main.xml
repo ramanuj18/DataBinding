@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout   xmlns:android="http://schemas.android.com/apk/res/android">
+    <data>
+        <import type="android.view.View"/>
+        <variable name="temp" type="com.example.databindingexample.databinding.TemperatureData"/>
+    </data>
+<LinearLayout
+        xmlns:tools="http://schemas.android.com/tools"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context=".MainActivity">
+    <EditText
+            android:id="@+id/edt_celsius"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="12dp"
+           />
+    <!-- android:text="@{temp.celsius}"-->
+    <EditText
+            android:id="@+id/edt_location"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="12dp"
+           />
+    <!-- android:text="@{temp.location}"-->
+
+    <Button
+            android:id="@+id/btn_set_temp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="update"
+            android:layout_gravity="center_horizontal"
+            android:onClick="@{()->temp.setTempData(edtCelsius,edtLocation)}"
+           />
+    <!-- android:onClick="@{()->temp.setTempData(edtCelsius.getText().toString(),edtLocation.getText().toString())}"-->
+    <!--  android:onClick="@{()->temp.getData()}"-->
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/txt_result"
+            android:layout_gravity="center_horizontal"
+            android:text="@{`celsius : `+temp.celsius +`, location : `+temp.location}"/>
+
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:id="@+id/txt_test"
+            android:text="@{temp.getUserName()}"
+           />
+    <!-- android:text="@{`Count : `+Integer.toString(temp.count)}"-->
+</LinearLayout>
+</layout>
