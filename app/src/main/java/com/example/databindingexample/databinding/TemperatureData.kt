@@ -1,7 +1,7 @@
 package com.example.databindingexample.databinding
 
-import android.databinding.BaseObservable
-import android.databinding.Bindable
+import androidx.databinding.BaseObservable
+import androidx.databinding.Bindable
 import android.widget.EditText
 import com.example.databindingexample.BR
 

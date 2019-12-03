@@ -12,7 +12,7 @@
             android:orientation="vertical"
             tools:context=".login_pkg.LoginActivity">
 
-        <android.support.design.widget.TextInputLayout
+        <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:error="@{loginmodel.userNameError}"
@@ -25,9 +25,9 @@
                     android:hint="user name"
                     android:inputType="textEmailAddress"
                     android:text="@={loginmodel.userName}"/>
-        </android.support.design.widget.TextInputLayout>
+        </com.google.android.material.textfield.TextInputLayout>
 
-        <android.support.design.widget.TextInputLayout
+        <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:error="@{loginmodel.passwordError}"
@@ -40,12 +40,27 @@
                     android:hint="password"
                     android:inputType="textEmailAddress"
                     android:text="@={loginmodel.userPassword}"/>
-        </android.support.design.widget.TextInputLayout>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="8dp">
+
+            <EditText
+                    android:id="@+id/edt_age"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="age"
+                    android:maxLength="3"
+                    android:inputType="number"
+                    android:text="@={loginmodel.userAge}"/>
+        </com.google.android.material.textfield.TextInputLayout>
 
         <Button android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-        android:text="Login"
-        android:id="@+id/btn_login"
-        android:onClick="@{(v)->loginmodel.login(v,loginmodel)}"/>
+                android:text="Login"
+                android:id="@+id/btn_login"
+                android:onClick="@{(v)->loginmodel.login(v,loginmodel)}"/>
     </LinearLayout>
 </layout>

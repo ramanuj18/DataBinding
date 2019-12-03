@@ -1,9 +1,9 @@
 package com.example.databindingexample.login_pkg.model
 
-import android.databinding.BaseObservable
-import android.databinding.Bindable
-import android.databinding.ObservableField
+import androidx.databinding.*
 import android.view.View
+import android.widget.EditText
+import android.widget.TextView
 import android.widget.Toast
 import com.example.databindingexample.BR
 
@@ -41,6 +41,13 @@ class LoginModel(private val loginView: LoginView) : BaseObservable() {
             notifyPropertyChanged(BR.passwordError)
         }
 
+    @Bindable
+    var userAge:Int?=null
+    set(value) {
+        field=value
+        notifyPropertyChanged(BR.userAge)
+    }
+
     fun login(view: View,loginModel: LoginModel) {
         if (loginModel.userName == null || loginModel.userName!!.isEmpty()) {
             userNameError = "please enter user name"
@@ -53,11 +60,29 @@ class LoginModel(private val loginView: LoginView) : BaseObservable() {
             return
         }
 
-        loginView.loginSuccess()
+        loginView.loginSuccess(loginModel)
         Toast.makeText(view.context,"login success",Toast.LENGTH_SHORT).show()
         userNameError=null
         passwordError=null
+    }
 
+       companion object {
+        @BindingAdapter("android:text")
+        @JvmStatic
+        fun setText(editText: EditText, a: Int) {
+            if(editText.text.toString().isNotEmpty() && editText.text.toString().toInt() != a){
+                editText.setText(a.toString())
+            }
+        }
+
+           @InverseBindingAdapter(attribute="android:text")
+           @JvmStatic
+           fun getText(editText: EditText):Int{
+               if(editText.text.toString().isNotEmpty()) {
+                   return editText.text.toString().toInt()
+               }
+               return 0
+           }
     }
 
 }

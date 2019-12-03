@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable name="info" type="com.example.databindingexample.binding_with_check_and_radio.InfoModel"/>
+    </data>
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            tools:context=".binding_with_check_and_radio.ExampleActivity">
+        <RadioGroup
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:onCheckedChanged="@{info::onNationalitySelected}">
+            <RadioButton
+                    android:text="Indian"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/radioIndian"/>
+            <RadioButton
+                    android:text="Other"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/radioOther"/>
+        </RadioGroup>
+        <CheckBox
+                android:text="terms and conditions"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/checkBox"
+                android:layout_marginTop="20dp"
+                android:checked="@={info.termsAndConditions}"/>
+        <ToggleButton
+                android:layout_marginTop="20dp"
+                android:text="ToggleButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/toggleButton"
+                android:textOff="not Agree"
+                android:textOn="Agree"
+                android:textAllCaps="false"
+                android:checked="@={info.toggleChecked}"/>
+        <Switch
+                android:layout_marginTop="20dp"
+                android:text="Switch"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/switch1"
+                android:checked="@={info.switchFlag}"/>
+
+        <Button android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="click"
+                android:layout_marginTop="20dp"
+                android:id="@+id/button"
+                android:onClick="@{info::onButtonClick}"/>
+
+    </LinearLayout>
+</layout>

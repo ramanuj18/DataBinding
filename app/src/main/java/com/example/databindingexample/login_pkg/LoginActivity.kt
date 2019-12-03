@@ -1,8 +1,8 @@
 package com.example.databindingexample.login_pkg
 
 import android.content.Intent
-import android.databinding.DataBindingUtil
-import android.support.v7.app.AppCompatActivity
+import androidx.databinding.DataBindingUtil
+import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
 import com.example.databindingexample.R
@@ -26,8 +26,8 @@ class LoginActivity : AppCompatActivity(),LoginView{
 //        }
     }
 
-    override fun loginSuccess() {
-//        Toast.makeText(this,"login success",Toast.LENGTH_SHORT).show()
+    override fun loginSuccess(loginModel: LoginModel) {
+        Toast.makeText(this,"login success, User age is "+loginModel.userAge,Toast.LENGTH_SHORT).show()
         startActivity(Intent(this,DetailActivity::class.java))
     }
 }

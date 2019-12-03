@@ -1,7 +1,7 @@
 package com.example.databindingexample.databinding_adapter.model
 
-import android.databinding.BaseObservable
-import android.databinding.Bindable
+import androidx.databinding.BaseObservable
+import androidx.databinding.Bindable
 import com.example.databindingexample.BR
 
 /**

@@ -1,9 +1,10 @@
 package com.example.databindingexample
 
 import android.content.Intent
-import android.databinding.DataBindingUtil
-import android.support.v7.app.AppCompatActivity
+import androidx.databinding.DataBindingUtil
+import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.example.databindingexample.binding_with_check_and_radio.ExampleActivity
 import com.example.databindingexample.databinding.ActivityHomeBinding
 import com.example.databindingexample.databinding_adapter.UsersActivity
 import com.example.databindingexample.login_pkg.LoginActivity
@@ -28,6 +29,10 @@ class HomeActivity : AppCompatActivity() {
 
         binding.example4.setOnClickListener {
             startActivity(Intent(this,VisibilityActivity::class.java))
+        }
+
+        binding.example5.setOnClickListener{
+            startActivity(Intent(this,ExampleActivity::class.java))
         }
 
     }

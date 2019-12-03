@@ -1,7 +1,7 @@
 package com.example.databindingexample.view_visibility
 
-import android.databinding.BindingAdapter
-import android.databinding.InverseBindingAdapter
+import androidx.databinding.BindingAdapter
+import androidx.databinding.InverseBindingAdapter
 import android.widget.ImageView
 import android.widget.TextView
 import com.example.databindingexample.R
@@ -13,7 +13,7 @@ object MyBindingAdapter {
     @BindingAdapter("value")
     @JvmStatic
     fun bindingValue(textView: TextView,amount:Int){
-        textView.text=""+amount
+        textView.text=amount.toString()
     }
 
     @BindingAdapter("setResource")

@@ -22,5 +22,10 @@
             android:text="Example 4 Handle Visibility"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" android:id="@+id/example4"/>
+    <Button
+            android:text="Some more example"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:id="@+id/example5"/>
+
 </LinearLayout>
 </layout>

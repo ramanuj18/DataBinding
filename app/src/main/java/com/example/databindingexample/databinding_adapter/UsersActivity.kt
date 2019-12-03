@@ -1,8 +1,8 @@
 package com.example.databindingexample.databinding_adapter
 
-import android.databinding.DataBindingUtil
+import androidx.databinding.DataBindingUtil
 import android.os.Bundle
-import android.support.v7.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatActivity
 import com.example.databindingexample.R
 import com.example.databindingexample.databinding.ActivityUsersBinding
 import com.example.databindingexample.databinding_adapter.adapter.DataBindingAdapter

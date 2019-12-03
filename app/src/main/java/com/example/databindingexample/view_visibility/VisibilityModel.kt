@@ -1,8 +1,8 @@
 package com.example.databindingexample.view_visibility
 
-import android.databinding.BaseObservable
-import android.databinding.Bindable
-import android.databinding.BindingAdapter
+import androidx.databinding.BaseObservable
+import androidx.databinding.Bindable
+import androidx.databinding.BindingAdapter
 import android.widget.ImageView
 import com.example.databindingexample.BR
 import com.example.databindingexample.R

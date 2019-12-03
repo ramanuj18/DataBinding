@@ -5,7 +5,6 @@
         <import type="com.example.databindingexample.R" />
         <import type="android.view.View" />
 <variable name="visibility" type="com.example.databindingexample.view_visibility.VisibilityModel"/>
- <variable name="bindingAdapter" type="com.example.databindingexample.view_visibility.MyBindingAdapter"/>
     </data>
 
 <LinearLayout
